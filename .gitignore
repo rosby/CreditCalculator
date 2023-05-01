@@ -3,3 +3,13 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+CreditCalculator/appsettings.Development.json
+.DS_Store
+CreditCalculator/.idea/.idea.CreditCalculator.dir/.idea/vcs.xml
+CreditCalculator/.idea/.idea.CreditCalculator.dir/.idea/indexLayout.xml
+.idea/.idea.CreditCalculator/.idea/vcs.xml
+.idea/.idea.CreditCalculator/.idea/indexLayout.xml
+CreditCalculator/.idea/.idea.CreditCalculator.dir/.idea/workspace.xml
+CreditCalculator/.idea/.idea.CreditCalculator.dir/.idea/projectSettingsUpdater.xml
+.idea/.idea.CreditCalculator/.idea/workspace.xml
+.idea/.idea.CreditCalculator/.idea/projectSettingsUpdater.xml
