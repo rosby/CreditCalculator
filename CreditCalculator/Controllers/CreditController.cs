@@ -1,9 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using CreditCalculator.Controllers.Models;
 using CreditCalculator.Domain;
-using DecimalMath;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace CreditCalculator.Controllers;
 
@@ -18,25 +15,21 @@ public class CreditController : ControllerBase
         _creditCalculatorService = creditCalculatorService;
     }
 
+    /// <summary>
+    /// Рассчитать кредит
+    /// </summary>
+    /// <param name="model">Информация для расчета кредита</param>
+    /// <returns>График платежей</returns>
     [HttpPost]
-    public async Task<IEnumerable<MonthlyPayment>> CalculateAsync([FromQuery]DateTime date, [FromBody]CalculateCreditApiModel model)
+    public async Task<IEnumerable<MonthlyPayment>> CalculateAsync(
+        [FromBody] CalculateCreditApiModel model)
     {
         await Task.Yield();
-        return _creditCalculatorService.CalculateAnnuityCredit(model);
-        await Task.Delay(1);
-
-        
-        decimal creditBody = 150000;
-        decimal percent = 10;
-        decimal monthlyPercent = percent / 12 / 100;
-        int numberOfMonths = 18;
-
-        
-        decimal monthlyPaymentNotRounded = creditBody * ((monthlyPercent * DecimalEx.Pow(1 + monthlyPercent, numberOfMonths))
-            / (DecimalEx.Pow(1 + monthlyPercent, numberOfMonths) - 1));
-        var monthlyPayment = Math.Round(monthlyPaymentNotRounded, 2);
-        
-        
-        
+        return _creditCalculatorService.CalculateCredit(
+            model.CreditAmount!.Value, 
+            model.IssueDate!.Value, 
+            model.ClosingDate!.Value, 
+            model.InterestRate!.Value,
+            model.СhartType!.Value);
     }
 }

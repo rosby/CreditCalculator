@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator", "CreditCalculator\CreditCalculator.csproj", "{05C3D89A-C56E-4AB7-B970-E0699FF8B2C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCalculator.Tests", "CreditCalculator.Tests\CreditCalculator.Tests.csproj", "{C218EBA3-8B78-45AA-B38E-1B95F0CF49F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{05C3D89A-C56E-4AB7-B970-E0699FF8B2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C3D89A-C56E-4AB7-B970-E0699FF8B2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05C3D89A-C56E-4AB7-B970-E0699FF8B2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C218EBA3-8B78-45AA-B38E-1B95F0CF49F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C218EBA3-8B78-45AA-B38E-1B95F0CF49F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C218EBA3-8B78-45AA-B38E-1B95F0CF49F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C218EBA3-8B78-45AA-B38E-1B95F0CF49F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
