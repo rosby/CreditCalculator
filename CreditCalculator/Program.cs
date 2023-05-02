@@ -6,15 +6,23 @@ using Newtonsoft.Json.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
+#region Configuration
 IConfiguration configuration = new ConfigurationBuilder()
     .SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
 
+#endregion
+
+
+#region Controller
+
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.Converters.Add(new StringEnumConverter());
 });
+
+#endregion
 
 
 #region Swagger
@@ -33,7 +41,14 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 #endregion
+
+
+#region Services
+
 builder.Services.AddTransient<CreditCalculatorService>();
+
+
+#endregion
 
     
 var app = builder.Build();
